@@ -100,9 +100,8 @@ class Keyboard:
         self.SendToPC(NULL_CHAR*8)
 
     def SendToPC(self, packet):
-        pass
-        #with open('/dev/hidg0', 'rb+') as fd:
-        #    fd.write(packet.encode())
+        with open('/dev/hidg0', 'rb+') as fd:
+            fd.write(packet.encode())
 
 
 class Server(threading.Thread):
